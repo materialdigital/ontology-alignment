@@ -1,0 +1,107 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix provo_egg: <http://example.org/provo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/provo#altitude
+provo_egg:altitude rdf:type owl:DatatypeProperty ;
+            rdfs:label "altitude" .
+
+
+###  http://example.org/provo#eggInitTemp
+provo_egg:eggInitTemp rdf:type owl:DatatypeProperty ;
+               rdfs:label "egg init temp" .
+
+
+###  http://example.org/provo#eggSize
+provo_egg:eggSize rdf:type owl:DatatypeProperty ;
+           rdfs:label "egg size" .
+
+
+###  http://example.org/provo#waterTemp
+provo_egg:waterTemp rdf:type owl:DatatypeProperty ;
+             rdfs:label "water temp" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/provo#BoiledEgg
+provo_egg:BoiledEgg rdf:type owl:Class ;
+             rdfs:subClassOf provo_egg:Egg ;
+             rdfs:label "Boiled Egg" .
+
+###  http://example.org/provo#EasterEgg
+provo_egg:EasterEgg rdf:type owl:Class ;
+             rdfs:subClassOf provo_egg:BoiledEgg ;
+             rdfs:label "Easter Egg" .
+
+
+###  http://example.org/provo#Egg
+provo_egg:Egg rdf:type owl:Class ;
+       rdfs:subClassOf prov:Entity ;
+       rdfs:label "Egg" .
+
+
+###  http://example.org/provo#Parameters
+provo_egg:Parameters rdf:type owl:Class ;
+              rdfs:subClassOf prov:Entity ;
+              rdfs:label "parameters" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/provo#boiledEgg1
+provo_egg:boiledEgg1 rdf:type owl:NamedIndividual ,
+                       provo_egg:BoiledEgg ;
+              prov:wasDerivedFrom provo_egg:easterEgg1 ;
+              prov:wasGeneratedBy provo_egg:meCookingAnEgg1 .
+
+
+###  http://example.org/provo#cookingParams1
+provo_egg:cookingParams1 rdf:type owl:NamedIndividual ,
+                           provo_egg:Parameters ;
+                  prov:wasDerivedFrom provo_egg:boiledEgg1 ;
+                  provo_egg:altitude "0.0"^^xsd:double ;
+                  provo_egg:waterTemp "100.0"^^xsd:double .
+
+
+###  http://example.org/provo#easterEgg1
+provo_egg:easterEgg1 rdf:type owl:NamedIndividual ,
+                       provo_egg:EasterEgg ;
+              prov:wasGeneratedBy provo_egg:mePaintingAnEgg1 .
+
+
+###  http://example.org/provo#egg1
+provo_egg:egg1 rdf:type owl:NamedIndividual ,
+                 provo_egg:Egg ;
+        prov:wasDerivedFrom provo_egg:boiledEgg1 ;
+        provo_egg:eggInitTemp "5.0"^^xsd:double ;
+        provo_egg:eggSize "M"^^xsd:string .
+
+
+###  http://example.org/provo#meCookingAnEgg1
+provo_egg:meCookingAnEgg1 rdf:type owl:NamedIndividual ,
+                            prov:Activity ;
+                   prov:used provo_egg:egg1 ;
+                   prov:endedAtTime "2022-05-10T07:10:00"^^xsd:dateTime ;
+                   prov:startedAtTime "2022-05-10T07:00:00"^^xsd:dateTime .
+
+
+###  http://example.org/provo#mePaintingAnEgg1
+provo_egg:mePaintingAnEgg1 rdf:type owl:NamedIndividual ,
+                             prov:Activity ;
+                    prov:used provo_egg:boiledEgg1 .
+

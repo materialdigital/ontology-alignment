@@ -1,0 +1,355 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix emmo_egg: <http://example.org/emmo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <http://emmo.info/emmo> ,
+               <http://emmo.info/emmo/1.0.0-beta> ;
+   <http://purl.org/dc/elements/1.1/description> "Ontology created from the PMD ontology Playground conceptboard"
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://emmo.info/emmo#hasInput
+<http://emmo.info/emmo#hasInput> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain emmo_egg:EggBoilingProcess ;
+                                 rdfs:range emmo_egg:Egg ;
+                                 rdfs:label "has input" .
+
+
+###  http://emmo.info/emmo#hasMeasurementUnit
+<http://emmo.info/emmo#hasMeasurementUnit> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain emmo_egg:WaterTemperature ;
+                                           rdfs:range <http://emmo.info/emmo#DegreeCelsius> ;
+                                           rdfs:label "has measurement unit" .
+
+
+###  http://emmo.info/emmo#hasOutput
+<http://emmo.info/emmo#hasOutput> rdf:type owl:ObjectProperty ;
+                                  rdfs:domain emmo_egg:EggBoilingProcess ;
+                                  rdfs:range emmo_egg:BoiledEgg ;
+                                  rdfs:label "has output" .
+
+
+###  http://emmo.info/emmo#hasParticipant
+<http://emmo.info/emmo#hasParticipant> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain emmo_egg:EggBoilingProcess ;
+                                       rdfs:range emmo_egg:EggBoiler ,
+                                                  emmo_egg:EggBoiling ,
+                                                  emmo_egg:HeatingWater ,
+                                                  emmo_egg:Quenching ;
+                                       rdfs:label "has participant" .
+
+
+###  http://emmo.info/emmo#hasPhysicalDimension
+<http://emmo.info/emmo#hasPhysicalDimension> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <http://emmo.info/emmo#DegreeCelsius> ;
+                                             rdfs:range <http://emmo.info/emmo#TemperatureDimension> ;
+                                             rdfs:label "has physical dimension" .
+
+
+###  http://emmo.info/emmo#hasProperty
+<http://emmo.info/emmo#hasProperty> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain emmo_egg:Egg ,
+                                                emmo_egg:EggBoilingProcess ;
+                                    rdfs:range emmo_egg:EggBoilingParameter ,
+                                               emmo_egg:EggSize ;
+                                    rdfs:label "has property" .
+
+
+###  http://emmo.info/emmo#hasQuantityValue
+<http://emmo.info/emmo#hasQuantityValue> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain emmo_egg:WaterTemperature ;
+                                         rdfs:label "has quantity value" .
+
+
+###  http://emmo.info/emmo#hasSign
+<http://emmo.info/emmo#hasSign> rdf:type owl:ObjectProperty ;
+                                rdfs:domain emmo_egg:EggBoiler ;
+                                rdfs:range emmo_egg:MachineIdentifier ;
+                                rdfs:label "has sign" .
+
+
+###  http://emmo.info/emmo#hasTemporalFirst
+<http://emmo.info/emmo#hasTemporalFirst> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain emmo_egg:EggBoilingProcess ;
+                                         rdfs:range emmo_egg:HeatingWater ;
+                                         rdfs:label "has temporal first" .
+
+
+###  http://emmo.info/emmo#hasTemporalLast
+<http://emmo.info/emmo#hasTemporalLast> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain emmo_egg:EggBoilingProcess ;
+                                        rdfs:range emmo_egg:Quenching ;
+                                        rdfs:label "has temporal last" .
+
+
+###  http://emmo.info/emmo#hasTemporalNext
+<http://emmo.info/emmo#hasTemporalNext> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain emmo_egg:EggBoiling ,
+                                                    emmo_egg:HeatingWater ;
+                                        rdfs:range emmo_egg:EggBoiling ,
+                                                   emmo_egg:Quenching ;
+                                        rdfs:label "has temporal next" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://emmo.info/emmo#hasNumericalData
+<http://emmo.info/emmo#hasNumericalData> rdf:type owl:DatatypeProperty ;
+                                         rdfs:label "has numerical data" .
+
+
+###  http://emmo.info/emmo#hasSymbolData
+<http://emmo.info/emmo#hasSymbolData> rdf:type owl:DatatypeProperty ;
+                                      rdfs:label "has symbol data" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo#DegreeCelsius
+<http://emmo.info/emmo#DegreeCelsius> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://emmo.info/emmo#EMMO_b081b346_7279_46ef_9a3d_2c088fcd79f4> ;
+                                      rdfs:label "Degree Celsius" .
+
+
+###  http://emmo.info/emmo#TemperatureDimension
+<http://emmo.info/emmo#TemperatureDimension> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://emmo.info/emmo#EMMO_9895a1b4_f0a5_4167_ac5e_97db40b8bfcc> ;
+                                             rdfs:label "Temperature Dimension" .
+
+
+###  http://example.org/emmo#BoiledEgg
+emmo_egg:BoiledEgg rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> ;
+             rdfs:label "Boiled Egg" .
+
+
+###  http://example.org/emmo#Egg
+emmo_egg:Egg rdf:type owl:Class ;
+       rdfs:subClassOf <http://emmo.info/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty <http://emmo.info/emmo#hasProperty> ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass emmo_egg:EggSize
+                       ] ;
+       rdfs:label "Egg" .
+
+
+###  http://example.org/emmo#EggBoiler
+emmo_egg:EggBoiler rdf:type owl:Class ;
+             rdfs:subClassOf <http://emmo.info/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty <http://emmo.info/emmo#hasSign> ;
+                               owl:someValuesFrom emmo_egg:MachineIdentifier
+                             ] ;
+             rdfs:label "Egg Boiler" .
+
+
+###  http://example.org/emmo#EggBoiling
+emmo_egg:EggBoiling rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://emmo.info/emmo#hasTemporalNext> ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass emmo_egg:Quenching
+                              ] ;
+              rdfs:label "Egg Boiling" .
+
+
+###  http://example.org/emmo#EggBoilingParameter
+emmo_egg:EggBoilingParameter rdf:type owl:Class ;
+                       rdfs:subClassOf <http://emmo.info/emmo#EMMO_d1d436e7_72fc_49cd_863b_7bfb4ba5276a> ;
+                       rdfs:label "Egg Boiling Parameter" .
+
+
+###  http://example.org/emmo#EggBoilingProcess
+emmo_egg:EggBoilingProcess rdf:type owl:Class ;
+                     rdfs:subClassOf <http://emmo.info/emmo#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasInput> ;
+                                       owl:someValuesFrom emmo_egg:Egg
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasOutput> ;
+                                       owl:someValuesFrom emmo_egg:BoiledEgg
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasParticipant> ;
+                                       owl:someValuesFrom emmo_egg:EggBoiler
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasProperty> ;
+                                       owl:someValuesFrom emmo_egg:EggBoilingParameter
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasParticipant> ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass emmo_egg:EggBoiling
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasParticipant> ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass emmo_egg:HeatingWater
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasParticipant> ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass emmo_egg:Quenching
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasTemporalFirst> ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass emmo_egg:HeatingWater
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://emmo.info/emmo#hasTemporalLast> ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass emmo_egg:Quenching
+                                     ] ;
+                     rdfs:label "Egg Boiling Process" .
+
+
+###  http://example.org/emmo#EggSize
+emmo_egg:EggSize rdf:type owl:Class ;
+           rdfs:label "Egg Size" .
+
+
+###  http://example.org/emmo#HeatingWater
+emmo_egg:HeatingWater rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://emmo.info/emmo#hasTemporalNext> ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass emmo_egg:EggBoiling
+                                ] ;
+                rdfs:label "Heating Water" .
+
+
+###  http://example.org/emmo#MachineIdentifier
+emmo_egg:MachineIdentifier rdf:type owl:Class ;
+                     rdfs:label "Machine Identifier" .
+
+
+###  http://example.org/emmo#Quenching
+emmo_egg:Quenching rdf:type owl:Class ;
+             rdfs:label "Quenching" .
+
+
+###  http://example.org/emmo#WaterTemperature
+emmo_egg:WaterTemperature rdf:type owl:Class ;
+                    rdfs:subClassOf <http://emmo.info/emmo#EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f> ,
+                                    emmo_egg:EggBoilingParameter ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://emmo.info/emmo#hasMeasurementUnit> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass <http://emmo.info/emmo#DegreeCelsius>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty <http://emmo.info/emmo#hasQuantityValue> ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass <http://emmo.info/emmo#EMMO_18d180e4_5e3e_42f7_820c_e08951223486>
+                                    ] ;
+                    rdfs:label "Water Temperature" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/emmo#BoiledEgg1
+emmo_egg:BoiledEgg1 rdf:type owl:NamedIndividual ,
+                       emmo_egg:BoiledEgg .
+
+
+###  http://example.org/emmo#DegreeCelsiusInst1
+emmo_egg:DegreeCelsiusInst1 rdf:type owl:NamedIndividual ,
+                               <http://emmo.info/emmo#DegreeCelsius> .
+
+
+###  http://example.org/emmo#Egg1
+emmo_egg:Egg1 rdf:type owl:NamedIndividual ,
+                 emmo_egg:Egg ;
+        <http://emmo.info/emmo#hasProperty> emmo_egg:EggSize1 .
+
+
+###  http://example.org/emmo#EggBoiler1
+emmo_egg:EggBoiler1 rdf:type owl:NamedIndividual ,
+                       emmo_egg:EggBoiler ;
+              <http://emmo.info/emmo#hasSign> emmo_egg:MachineIdentifier1 .
+
+
+###  http://example.org/emmo#EggBoiling1
+emmo_egg:EggBoiling1 rdf:type owl:NamedIndividual ,
+                        emmo_egg:EggBoiling ;
+               <http://emmo.info/emmo#hasTemporalNext> emmo_egg:Quenching1 .
+
+
+###  http://example.org/emmo#EggBoilingProcess1
+emmo_egg:EggBoilingProcess1 rdf:type owl:NamedIndividual ,
+                               emmo_egg:EggBoilingProcess ;
+                      <http://emmo.info/emmo#hasInput> emmo_egg:Egg1 ;
+                      <http://emmo.info/emmo#hasOutput> emmo_egg:BoiledEgg1 ;
+                      <http://emmo.info/emmo#hasParticipant> emmo_egg:EggBoiler1 ,
+                                                             emmo_egg:EggBoiling1 ,
+                                                             emmo_egg:HeatingWater1 ,
+                                                             emmo_egg:Quenching1 ;
+                      <http://emmo.info/emmo#hasProperty> emmo_egg:WaterTemp1 ;
+                      <http://emmo.info/emmo#hasTemporalFirst> emmo_egg:HeatingWater1 ;
+                      <http://emmo.info/emmo#hasTemporalLast> emmo_egg:Quenching1 .
+
+
+###  http://example.org/emmo#EggSize1
+emmo_egg:EggSize1 rdf:type owl:NamedIndividual ,
+                     emmo_egg:EggSize ;
+            <http://emmo.info/emmo#hasSymbolData> "m" .
+
+
+###  http://example.org/emmo#HeatingWater1
+emmo_egg:HeatingWater1 rdf:type owl:NamedIndividual ,
+                          emmo_egg:HeatingWater ;
+                 <http://emmo.info/emmo#hasTemporalNext> emmo_egg:EggBoiling1 .
+
+
+###  http://example.org/emmo#MachineIdentifier1
+emmo_egg:MachineIdentifier1 rdf:type owl:NamedIndividual ,
+                               emmo_egg:MachineIdentifier ;
+                      <http://emmo.info/emmo#hasSymbolData> "Boiler123" .
+
+
+###  http://example.org/emmo#Quenching1
+emmo_egg:Quenching1 rdf:type owl:NamedIndividual ,
+                       emmo_egg:Quenching .
+
+
+###  http://example.org/emmo#RealInst1
+emmo_egg:RealInst1 rdf:type owl:NamedIndividual ,
+                      <http://emmo.info/emmo#EMMO_18d180e4_5e3e_42f7_820c_e08951223486> ;
+             <http://emmo.info/emmo#hasNumericalData> "100.0"^^xsd:double .
+
+
+###  http://example.org/emmo#WaterTemp1
+emmo_egg:WaterTemp1 rdf:type owl:NamedIndividual ,
+                       emmo_egg:WaterTemperature ;
+              <http://emmo.info/emmo#hasMeasurementUnit> emmo_egg:DegreeCelsiusInst1 ;
+              <http://emmo.info/emmo#hasQuantityValue> emmo_egg:RealInst1 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

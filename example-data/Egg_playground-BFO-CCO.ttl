@@ -1,0 +1,272 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix cco: <http://www.ontologyrepository.com/CommonCoreOntologies/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ccobfo_egg: <http://example.org/ccobfo#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+#################################################################
+#    Classes
+#################################################################
+
+
+###  http://example.org/ccobfo#Egg
+ccobfo_egg:Egg rdf:type owl:Class ;
+              rdfs:subClassOf cco:PortionOfFood ;
+              rdfs:label "Egg" .
+
+
+###  http://example.org/ccobfo#EggSize
+ccobfo_egg:EggSize rdf:type owl:Class ;
+                  rdfs:subClassOf cco:SizeQuality ;
+                  rdfs:label "Egg Size" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/ccobfo#ActOfBoilingAnEgg
+ccobfo_egg:ActOfBoilingAnEgg rdf:type owl:NamedIndividual ,
+                                     cco:ActOfArtifactProcessing ;
+                            cco:has_process_part ccobfo_egg:CookEgg ,
+                                                 ccobfo_egg:CookWater ,
+                                                 ccobfo_egg:PutEggInWater ,
+                                                 ccobfo_egg:QuenchEgg ,
+                                                 ccobfo_egg:RetrieveEgg .
+
+
+###  http://example.org/ccobfo#ChangeOfColor
+ccobfo_egg:ChangeOfColor rdf:type owl:NamedIndividual ,
+                                 cco:Change ;
+                        cco:effects ccobfo_egg:ShellColor .
+
+
+###  http://example.org/ccobfo#CookEgg
+ccobfo_egg:CookEgg rdf:type owl:NamedIndividual ,
+                           cco:ActOfLocationChange ;
+                  cco:cause_of ccobfo_egg:IncreaseHardness ;
+                  cco:process_preceeds ccobfo_egg:RetrieveEgg .
+
+
+###  http://example.org/ccobfo#CookWater
+ccobfo_egg:CookWater rdf:type owl:NamedIndividual ,
+                             cco:ActOfArtifactProcessing ;
+                    cco:has_process_part ccobfo_egg:HeatUpWater ,
+                                         ccobfo_egg:PotFill ,
+                                         ccobfo_egg:PutPotOnHotPlate ;
+                    cco:process_preceeds ccobfo_egg:PutEggInWater .
+
+
+###  http://example.org/ccobfo#DigestEgg
+ccobfo_egg:DigestEgg rdf:type owl:NamedIndividual ,
+                             cco:ActOfPortionOfMaterialConsumtion ;
+                    cco:has_output ccobfo_egg:ordinalMeasurementInformationContentEntity1 .
+
+
+###  http://example.org/ccobfo#Egg1
+ccobfo_egg:Egg1 rdf:type owl:NamedIndividual ,
+                        ccobfo_egg:Egg ;
+               <http://purl.obolibrary.org/obo/RO_0000086> ccobfo_egg:ShellColor ,
+                               ccobfo_egg:eggSizeM ,
+                               ccobfo_egg:hardness1 ;
+               cco:has_input ccobfo_egg:CookEgg ,
+                             ccobfo_egg:PutEggInWater ,
+                             ccobfo_egg:QuenchEgg ,
+                             ccobfo_egg:RetrieveEgg .
+
+
+###  http://example.org/ccobfo#HeatUpWater
+ccobfo_egg:HeatUpWater rdf:type owl:NamedIndividual ,
+                               cco:ActOfArtifactProcessing .
+
+
+###  http://example.org/ccobfo#IncreaseHardness
+ccobfo_egg:IncreaseHardness rdf:type owl:NamedIndividual ,
+                                    cco:IncreaseOfQuality ;
+                           cco:effects ccobfo_egg:hardness1 .
+
+
+###  http://example.org/ccobfo#InformationBearingEntity4
+ccobfo_egg:InformationBearingEntity4 rdf:type owl:NamedIndividual ;
+                                    cco:has_text_value "Medium"^^xsd:string .
+
+
+###  http://example.org/ccobfo#PotFill
+ccobfo_egg:PotFill rdf:type owl:NamedIndividual ,
+                           cco:ActOfArtifactAssembly ;
+                  cco:process_preceeds ccobfo_egg:HeatUpWater .
+
+
+###  http://example.org/ccobfo#PotWaterTempSpec
+ccobfo_egg:PotWaterTempSpec rdf:type owl:NamedIndividual ,
+                                    cco:QualitySpecification ;
+                           <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:eggCookingPlan ;
+                           cco:prescribes ccobfo_egg:temperature1 ;
+                           cco:is_tokenized_by "Cooking"^^xsd:string .
+
+
+###  http://example.org/ccobfo#PutEggInWater
+ccobfo_egg:PutEggInWater rdf:type owl:NamedIndividual ,
+                                 cco:ActOfLocationChange ;
+                        cco:process_preceeds ccobfo_egg:CookEgg .
+
+
+###  http://example.org/ccobfo#PutPotOnHotPlate
+ccobfo_egg:PutPotOnHotPlate rdf:type owl:NamedIndividual ,
+                                    cco:ActOfLocationChange ;
+                           cco:process_preceeds ccobfo_egg:HeatUpWater .
+
+
+###  http://example.org/ccobfo#QuenchEgg
+ccobfo_egg:QuenchEgg rdf:type owl:NamedIndividual ,
+                             cco:ActOfLocationChange ;
+                    cco:occurs_on ccobfo_egg:temporalInterval1 .
+
+
+###  http://example.org/ccobfo#QuenchWaterTempSpec
+ccobfo_egg:QuenchWaterTempSpec rdf:type owl:NamedIndividual ,
+                                       cco:NominalMeasurementInformationContentEntity ,
+                                       cco:QualitySpecification ;
+                              <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:eggCookingPlan ;
+                              cco:prescribes ccobfo_egg:temperature2 ;
+                              cco:is_tokenized_by "Cold"^^xsd:string .
+
+
+###  http://example.org/ccobfo#RetrieveEgg
+ccobfo_egg:RetrieveEgg rdf:type owl:NamedIndividual ,
+                               cco:ActOfLocationChange ;
+                      cco:process_preceeds ccobfo_egg:QuenchEgg .
+
+
+###  http://example.org/ccobfo#ShellColor
+ccobfo_egg:ShellColor rdf:type owl:NamedIndividual ,
+                              cco:Color .
+
+
+###  http://example.org/ccobfo#TapWater
+ccobfo_egg:TapWater rdf:type owl:NamedIndividual ,
+                            <http://purl.obolibrary.org/obo/BFO_0000030>;
+                   cco:is_designated_by ccobfo_egg:TapWaterName .
+
+
+###  http://example.org/ccobfo#TapWaterName
+ccobfo_egg:TapWaterName rdf:type owl:NamedIndividual ,
+                                cco:DesignativeName ;
+                       cco:is_tokenized_by "Tap Water"^^xsd:string .
+
+
+###  http://example.org/ccobfo#actOfPaintingAnEgg1
+ccobfo_egg:actOfPaintingAnEgg1 rdf:type owl:NamedIndividual ,
+                                       cco:ActOfArtifactProcessing ;
+                              cco:cause_of ccobfo_egg:ChangeOfColor ;
+                              cco:has_input ccobfo_egg:Egg1 .
+
+
+###  http://example.org/ccobfo#eggCoockingTime1
+ccobfo_egg:eggCoockingTime1 rdf:type owl:NamedIndividual ,
+                                    cco:Multi-MinuteTemporalIntervalIdentifier ;
+                           <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:eggCookingPlan ,
+                                       ccobfo_egg:informationBearingEntity3 ,
+                                       ccobfo_egg:temporalInterval1 .
+
+
+###  http://example.org/ccobfo#eggCookingPlan
+ccobfo_egg:eggCookingPlan rdf:type owl:NamedIndividual ,
+                                  cco:PlanSpecification .
+
+
+###  http://example.org/ccobfo#eggCookingPlanObjectiv
+ccobfo_egg:eggCookingPlanObjectiv rdf:type owl:NamedIndividual ,
+                                          cco:Objective ;
+                                 <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:eggCookingPlan .
+
+
+###  http://example.org/ccobfo#eggSizeInitialm
+ccobfo_egg:eggSizeInitialm rdf:type owl:NamedIndividual ,
+                                   cco:Initialism ;
+                          cco:is_tokenized_by "M"^^xsd:string .
+
+
+###  http://example.org/ccobfo#eggSizeM
+ccobfo_egg:eggSizeM rdf:type owl:NamedIndividual ,
+                            ccobfo_egg:EggSize ;
+                   cco:is_designated_by ccobfo_egg:eggSizeInitialm .
+
+
+###  http://example.org/ccobfo#hardness1
+ccobfo_egg:hardness1 rdf:type owl:NamedIndividual ,
+                             cco:Hardness ;
+                    cco:is_measured_by ccobfo_egg:ordinalMeasurementInformationContentEntity1 .
+
+
+###  http://example.org/ccobfo#hardnessGoal
+ccobfo_egg:hardnessGoal rdf:type owl:NamedIndividual ,
+                                cco:QualitySpecification ;
+                       cco:is_about ccobfo_egg:eggCookingPlanObjectiv ;
+                       cco:prescribes ccobfo_egg:hardness1 ;
+                       cco:is_tokenized_by "Medium"^^xsd:string .
+
+
+###  http://example.org/ccobfo#informationBearingEntity1
+ccobfo_egg:informationBearingEntity1 rdf:type owl:NamedIndividual ,
+                                             cco:InformationBearingArtifact ;
+                                    cco:uses_measurement_unit cco:DegreeCelsiusMeasurementUnit ;
+                                    cco:has_double_value "100.0"^^xsd:double .
+
+
+###  http://example.org/ccobfo#informationBearingEntity3
+ccobfo_egg:informationBearingEntity3 rdf:type owl:NamedIndividual ,
+                                             cco:InformationBearingArtifact ;
+                                    cco:uses_measurement_unit cco:MinuteMeasurementUnit ;
+                                    cco:has_double_value "6.0"^^xsd:double .
+
+
+###  http://example.org/ccobfo#intervalMeasurementInformationContentEntity1
+ccobfo_egg:intervalMeasurementInformationContentEntity1 rdf:type owl:NamedIndividual ,
+                                                                cco:IntervalMeasurementInformationContentEntity ;
+                                                       <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:informationBearingEntity1 .
+
+
+###  http://example.org/ccobfo#ordinalMeasurementInformationContentEntity1
+ccobfo_egg:ordinalMeasurementInformationContentEntity1 rdf:type owl:NamedIndividual ,
+                                                               cco:OrdinalMeasurementInformationContentEntity ;
+                                                      <http://purl.obolibrary.org/obo/RO_0000052> ccobfo_egg:InformationBearingEntity4 .
+
+
+###  http://example.org/ccobfo#portionOfWater1
+ccobfo_egg:portionOfWater1 rdf:type owl:NamedIndividual ,
+                                   cco:PortionOfMaterial ;
+                          <http://purl.obolibrary.org/obo/RO_0000086> ccobfo_egg:temperature1 ;
+                          cco:has_input ccobfo_egg:CookWater ,
+                                        ccobfo_egg:PutEggInWater ;
+                          cco:is_made_of ccobfo_egg:TapWater .
+
+
+###  http://example.org/ccobfo#portionOfWater2
+ccobfo_egg:portionOfWater2 rdf:type owl:NamedIndividual ,
+                                   cco:PortionOfMaterial ;
+                          <http://purl.obolibrary.org/obo/RO_0000086> ccobfo_egg:temperature2 ;
+                          cco:has_input ccobfo_egg:QuenchEgg ;
+                          cco:is_made_of ccobfo_egg:TapWater .
+
+
+###  http://example.org/ccobfo#temperature1
+ccobfo_egg:temperature1 rdf:type owl:NamedIndividual ,
+                                cco:Temperature ;
+                       <http://purl.obolibrary.org/obo/BFO_0000050> ccobfo_egg:intervalMeasurementInformationContentEntity1 .
+
+
+###  http://example.org/ccobfo#temperature2
+ccobfo_egg:temperature2 rdf:type owl:NamedIndividual ,
+                                cco:Temperature .
+
+
+###  http://example.org/ccobfo#temporalInterval1
+ccobfo_egg:temporalInterval1 rdf:type owl:NamedIndividual ,
+                                     cco:TemporalInterval .
+

@@ -1,0 +1,245 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix pmdco: <http://material-digital.de/pmdco#> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
+@prefix pmdao_egg: <http://example.org/pmd#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   dc:description "Ontology code created by Chowlk"
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://wikiba.se/ontology#quantityAmount
+wikibase:quantityAmount rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/pmd#eggInitTemp
+pmdao_egg:eggInitTemp rdf:type owl:ObjectProperty ;
+                      rdfs:label "egg init temp" .
+
+
+###  http://material-digital.de/pmdco#hasInputObject
+pmdco:hasInputObject rdf:type owl:ObjectProperty ;
+                     rdfs:label "has input object" .
+
+
+###  http://material-digital.de/pmdco#hasOutputObject
+pmdco:hasOutputObject rdf:type owl:ObjectProperty ;
+                      rdfs:label "has output object" .
+
+
+###  http://material-digital.de/pmdco#hasPmdUnit
+pmdco:hasPmdUnit rdf:type owl:ObjectProperty ;
+                 rdfs:label "has pmd unit" .
+
+
+###  http://material-digital.de/pmdco#hasQuantitativeParameter
+pmdco:hasQuantitativeParameter rdf:type owl:ObjectProperty ;
+                               rdfs:label "has quantitative parameter" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/pmd#eggHardness
+pmdao_egg:eggHardness rdf:type owl:DatatypeProperty ;
+                      rdfs:label "egg hardness" .
+
+
+###  http://example.org/pmd#eggSize
+pmdao_egg:eggSize rdf:type owl:DatatypeProperty ;
+                  rdfs:label "egg size" .
+
+
+###  http://material-digital.de/pmdco#hasUcumCode
+pmdco:hasUcumCode rdf:type owl:DatatypeProperty ;
+                  rdfs:label "has ucum code" .
+
+
+###  http://www.w3.org/ns/prov#endedAtTime
+prov:endedAtTime rdf:type owl:DatatypeProperty ;
+                 rdfs:label "ended at time" .
+
+
+###  http://www.w3.org/ns/prov#startedAtTime
+prov:startedAtTime rdf:type owl:DatatypeProperty ;
+                   rdfs:label "started at time" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/pmd#Altitude
+pmdao_egg:Altitude rdf:type owl:Class ;
+                   rdfs:subClassOf pmdco:QuantityValue ;
+                   rdfs:label "Altitude" .
+
+
+###  http://example.org/pmd#BoiledEgg
+pmdao_egg:BoiledEgg rdf:type owl:Class ;
+                    rdfs:subClassOf pmdao_egg:Egg ;
+                    rdfs:label "Boiled Egg" .
+
+
+###  http://example.org/pmd#EasterEgg
+pmdao_egg:EasterEgg rdf:type owl:Class ;
+                    rdfs:subClassOf pmdao_egg:BoiledEgg ;
+                    rdfs:label "Easter Egg" .
+
+
+###  http://example.org/pmd#Egg
+pmdao_egg:Egg rdf:type owl:Class ;
+              rdfs:subClassOf pmdco:Object ;
+              rdfs:label "Egg" .
+
+
+###  http://example.org/pmd#EggBoiling
+pmdao_egg:EggBoiling rdf:type owl:Class ;
+                     rdfs:subClassOf pmdco:Process ;
+                     rdfs:label "Egg Boiling" .
+
+
+###  http://example.org/pmd#EggPainting
+pmdao_egg:EggPainting rdf:type owl:Class ;
+                      rdfs:subClassOf pmdco:Process ;
+                      rdfs:label "Egg Painting" .
+
+
+###  http://example.org/pmd#WaterTemp
+pmdao_egg:WaterTemp rdf:type owl:Class ;
+                    rdfs:subClassOf pmdco:QuantityValue ;
+                    rdfs:label "Water Temp" .
+
+
+###  http://material-digital.de/pmdco#Object
+pmdco:Object rdf:type owl:Class ;
+             rdfs:subClassOf prov:Entity ;
+             rdfs:label "Object" .
+
+
+###  http://material-digital.de/pmdco#PmdSiUnit
+pmdco:PmdSiUnit rdf:type owl:Class ;
+                rdfs:subClassOf prov:Entity ;
+                rdfs:label "Pmd Si Unit" .
+
+
+###  http://material-digital.de/pmdco#Process
+pmdco:Process rdf:type owl:Class ;
+              rdfs:subClassOf prov:Activity ;
+              rdfs:label "Process" .
+
+
+###  http://material-digital.de/pmdco#QuantityValue
+pmdco:QuantityValue rdf:type owl:Class ;
+                    rdfs:subClassOf wikibase:Value ;
+                    rdfs:label "Quantity Value" .
+
+
+###  http://wikiba.se/ontology#Value
+wikibase:Value rdf:type owl:Class ;
+               rdfs:label "Value" .
+
+
+###  http://www.w3.org/ns/prov#Activity
+prov:Activity rdf:type owl:Class ;
+              rdfs:label "Activity" .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class ;
+            rdfs:label "Entity" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/pmd#altitude1
+pmdao_egg:altitude1 rdf:type owl:NamedIndividual ,
+                             pmdao_egg:Altitude ;
+                    pmdco:hasPmdUnit <http://example.org/pmd#2e7012fc14764843a96b6e231fb67c53> ;
+                    wikibase:quantityAmount "0.0"^^xsd:double .
+
+
+###  http://example.org/pmd#boiledEgg1
+pmdao_egg:boiledEgg1 rdf:type owl:NamedIndividual ,
+                              pmdao_egg:BoiledEgg ;
+                     pmdco:hasInputObject pmdao_egg:mePaintingAnEgg1 ;
+                     pmdao_egg:eggHardness "medium"^^xsd:string .
+
+
+###  http://example.org/pmd#easterEgg1
+pmdao_egg:easterEgg1 rdf:type owl:NamedIndividual ,
+                              pmdao_egg:EasterEgg .
+
+
+###  http://example.org/pmd#egg1
+pmdao_egg:egg1 rdf:type owl:NamedIndividual ,
+                        pmdao_egg:Egg ;
+               pmdao_egg:eggInitTemp pmdao_egg:eggtemp1 ;
+               pmdao_egg:eggSize "M"^^xsd:string .
+
+
+###  http://example.org/pmd#eggtemp1
+pmdao_egg:eggtemp1 rdf:type owl:NamedIndividual ,
+                            pmdco:QuantityValue ;
+                   pmdco:hasPmdUnit <http://example.org/pmd#515c392524f74d14bfd4e24c64141095> ;
+                   wikibase:quantityAmount "5.0"^^xsd:double .
+
+
+###  http://example.org/pmd#meCookingAnEgg1
+pmdao_egg:meCookingAnEgg1 rdf:type owl:NamedIndividual ,
+                                   pmdao_egg:EggBoiling ;
+                          pmdco:hasInputObject pmdao_egg:egg1 ;
+                          pmdco:hasOutputObject pmdao_egg:boiledEgg1 ;
+                          pmdco:hasQuantitativeParameter pmdao_egg:altitude1 ,
+                                                         pmdao_egg:watertemp1 ;
+                          prov:endedAtTime "2022-05-10T07:10:00"^^xsd:dateTime ;
+                          prov:startedAtTime "2022-05-10T07:00:00"^^xsd:dateTime .
+
+
+###  http://example.org/pmd#mePaintingAnEgg1
+pmdao_egg:mePaintingAnEgg1 rdf:type owl:NamedIndividual ,
+                                    pmdao_egg:EggPainting ;
+                           pmdco:hasOutputObject pmdao_egg:easterEgg1 .
+
+
+###  http://example.org/pmd#watertemp1
+pmdao_egg:watertemp1 rdf:type owl:NamedIndividual ,
+                              pmdao_egg:WaterTemp ;
+                     pmdco:hasPmdUnit <http://example.org/pmd#515c392524f74d14bfd4e24c64141095> ;
+                     wikibase:quantityAmount "100.0"^^xsd:double .
+
+
+###  http://example.org/pmd#2e7012fc14764843a96b6e231fb67c53
+<http://example.org/pmd#2e7012fc14764843a96b6e231fb67c53> rdf:type owl:NamedIndividual ,
+                                                                       pmdco:PmdSiUnit ;
+                                                              pmdco:hasUcumCode "m"^^xsd:string .
+
+
+###  http://example.org/pmd#515c392524f74d14bfd4e24c64141095
+<http://example.org/pmd#515c392524f74d14bfd4e24c64141095> rdf:type owl:NamedIndividual ,
+                                                                       pmdco:PmdSiUnit ;
+                                                              pmdco:hasUcumCode "Cel"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
