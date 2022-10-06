@@ -1,0 +1,306 @@
+@prefix : <https://material-digital.de/pmdco/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://material-digital.de/pmdco> .
+
+<https://material-digital.de/pmdco> rdf:type owl:Ontology ;
+                                     owl:imports #<http://emmo.info/emmo/1.0.0-beta4> ,
+                                                 <http://purl.obolibrary.org/obo/bfo/2020/bfo.owl> ,
+                                                 <http://www.w3.org/ns/prov-o-20130430> ;
+                                     rdfs:comment "This is an experimental ontology for the PMD ontology playground." .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo#EMMO_2480b72b_db8d_460f_9a5f_c2912f979046
+<http://emmo.info/emmo#EMMO_2480b72b_db8d_460f_9a5f_c2912f979046> owl:equivalentClass <http://www.w3.org/ns/prov#Agent> .
+
+
+###  http://emmo.info/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94
+<http://emmo.info/emmo#EMMO_4207e895_8b83_4318_996a_72cfb32acd94> rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> .
+
+
+###  http://emmo.info/emmo#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce
+<http://emmo.info/emmo#EMMO_43e9a05d_98af_41b4_92f6_00f79a09bfce> owl:equivalentClass <http://purl.obolibrary.org/obo/BFO_0000015> .
+
+
+###  http://emmo.info/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8
+<http://emmo.info/emmo#EMMO_494b372c_cfdf_47d3_a4de_5e037c540de8> rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> .
+
+
+###  http://emmo.info/emmo#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1
+<http://emmo.info/emmo#EMMO_5b2222df_4da6_442f_8244_96e9e45887d1> owl:equivalentClass <http://purl.obolibrary.org/obo/BFO_0000030> .
+
+
+###  http://emmo.info/emmo#EMMO_90ae56e4_d197_49b6_be1a_0049e4756606
+<http://emmo.info/emmo#EMMO_90ae56e4_d197_49b6_be1a_0049e4756606> owl:equivalentClass <http://purl.obolibrary.org/obo/BFO_0000030> .
+
+
+###  http://emmo.info/emmo#EMMO_b21a56ed_f969_4612_a6ec_cb7766f7f31d
+<http://emmo.info/emmo#EMMO_b21a56ed_f969_4612_a6ec_cb7766f7f31d> owl:equivalentClass <http://purl.obolibrary.org/obo/BFO_0000031> .
+
+
+###  http://emmo.info/emmo#EMMO_bafc17b5_9be4_4823_8bbe_ab4e90b6738c
+<http://emmo.info/emmo#EMMO_bafc17b5_9be4_4823_8bbe_ab4e90b6738c> owl:equivalentClass <http://www.ontologyrepository.com/CommonCoreOntologies/Act> .
+
+
+###  http://emmo.info/emmo#EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5
+<http://emmo.info/emmo#EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5> owl:equivalentClass <http://purl.obolibrary.org/obo/BFO_0000019> .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000015
+<http://purl.obolibrary.org/obo/BFO_0000015> owl:equivalentClass <http://www.w3.org/ns/prov#Activity> ,
+                                                                 [ owl:intersectionOf ( <http://purl.obolibrary.org/obo/BFO_0000003>
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000117> ;
+                                                                                          owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                              owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                                                                            <http://purl.obolibrary.org/obo/BFO_0000035>
+                                                                                                                          )
+                                                                                                            ]
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000132> ;
+                                                                                          owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                                        ]
+                                                                                        [ rdf:type owl:Restriction ;
+                                                                                          owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000139> ;
+                                                                                          owl:allValuesFrom <http://purl.obolibrary.org/obo/BFO_0000015>
+                                                                                        ]
+                                                                                      ) ;
+                                                                   rdf:type owl:Class
+                                                                 ] .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000019
+
+###  http://purl.obolibrary.org/obo/BFO_0000023
+<http://purl.obolibrary.org/obo/BFO_0000023> owl:equivalentClass <http://www.w3.org/ns/prov#Role> .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000030
+<http://purl.obolibrary.org/obo/BFO_0000030> owl:equivalentClass :PmdObject .
+
+
+###  http://purl.obolibrary.org/obo/BFO_0000031
+
+###  http://purl.obolibrary.org/obo/BFO_0000203
+<http://purl.obolibrary.org/obo/BFO_0000203> owl:equivalentClass <http://www.w3.org/ns/prov#InstantaneousEvent> .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Act
+<http://www.ontologyrepository.com/CommonCoreOntologies/Act> rdf:type owl:Class .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Agent
+<http://www.ontologyrepository.com/CommonCoreOntologies/Agent> rdf:type owl:Class ;
+                                                               owl:equivalentClass <http://www.w3.org/ns/prov#Agent> .
+
+
+###  http://www.ontologyrepository.com/CommonCoreOntologies/Artifact
+<http://www.ontologyrepository.com/CommonCoreOntologies/Artifact> rdf:type owl:Class ;
+                                                                  owl:equivalentClass :PmdEntity .
+
+
+###  http://www.w3.org/ns/prov#Activity
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000040> .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> owl:equivalentClass :PmdEntity .
+
+
+###  http://www.w3.org/ns/prov#InstantaneousEvent
+
+###  http://www.w3.org/ns/prov#Role
+
+###  https://material-digital.de/pmdco/AnalysisProcess
+:AnalysisProcess rdf:type owl:Class ;
+                 rdfs:subClassOf <http://emmo.info/emmo#EMMO_bafc17b5_9be4_4823_8bbe_ab4e90b6738c> ,
+                                 <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                 rdfs:comment """A process that is driven by the primary intent to gain new measurements
+An analysis process is either a transformative process or a non-transformative process."""@en ;
+                 rdfs:label "Analysis Process"@en .
+
+
+###  https://material-digital.de/pmdco/AtomisticLevelMaterialStructure
+:AtomisticLevelMaterialStructure rdf:type owl:Class ;
+                                 rdfs:subClassOf :MaterialStructure ;
+                                 rdfs:comment "It is a material length scale. Includes individual atoms and their spatial arrangement, information on the chemical elements, information on the lattice and crystal structure, 0-dimensional crystal defects"@en ;
+                                 rdfs:label "Atomistic Level Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/ContinuumLevelMaterialStructure
+:ContinuumLevelMaterialStructure rdf:type owl:Class ;
+                                 rdfs:subClassOf :MaterialStructure ;
+                                 rdfs:comment "A material structure that is at the length level of the the entire geometry."@en ;
+                                 rdfs:label "Continuum Level Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/ManufactureProcess
+:ManufactureProcess rdf:type owl:Class ;
+                    rdfs:subClassOf <http://emmo.info/emmo#EMMO_bafc17b5_9be4_4823_8bbe_ab4e90b6738c> ,
+                                    <http://purl.obolibrary.org/obo/BFO_0000015> ;
+                    rdfs:comment """A process that is driven by the primary intent to transform objects
+A manufacture process is always a transformative process."""@en ;
+                    rdfs:label "Manufacture Process"@en .
+
+
+###  https://material-digital.de/pmdco/MaterialIdentifier
+:MaterialIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                    rdfs:comment """It is a name or identifier of a material type. It designates a material. 
+E.g. \"steel\", \"aluminium\", \"wood\", \"plastic\", \"rubber\"."""@en ;
+                    rdfs:label "Material Identifier"@en ;
+                    <http://www.w3.org/ns/prov#editorialNote> "former \"Material\" : \"It is a substance or mixture of substances that constitutes an object. represented by the sum of material properties and material structure\"" .
+
+
+###  https://material-digital.de/pmdco/MaterialQuality
+:MaterialQuality rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000019> ;
+                 rdfs:comment "Physical property of a material which is measurable and characterizes a specific object, e.g. a specimen."@en ;
+                 rdfs:label "Material Quality"@en .
+
+
+###  https://material-digital.de/pmdco/MaterialQualitySpecification
+:MaterialQualitySpecification rdf:type owl:Class ;
+                              rdfs:subClassOf :QualitySpecification ;
+                              rdfs:comment "Specification of a physical property of a material"@en ;
+                              rdfs:label "Material Quality Specification"@en .
+
+
+###  https://material-digital.de/pmdco/MaterialStructure
+:MaterialStructure rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                   rdfs:comment "Structural and compositional information on a material within the regarded material level, includes 0,1,2,3 dimensional descriptions involves all material levels."@en ;
+                   rdfs:label "Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/MeasuredInformation
+:MeasuredInformation rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                     rdfs:label "Measured Information" ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "The output of a process facilitated by a measument device. The output is  about a specific object quality." .
+
+
+###  https://material-digital.de/pmdco/MeasurementDevice
+:MeasurementDevice rdf:type owl:Class ;
+                   rdfs:subClassOf :ProcessNode ;
+                   rdfs:label "Measurement Device" ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A process node capable of determining a specific quality." .
+
+
+###  https://material-digital.de/pmdco/Medium
+:Medium rdf:type owl:Class ;
+        rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+        rdfs:comment """A condition or environment in which something may function or flourish.
+https://www.merriam-webster.com/dictionary/medium""" .
+
+
+###  https://material-digital.de/pmdco/MesoscopicLevelMaterialStructure
+:MesoscopicLevelMaterialStructure rdf:type owl:Class ;
+                                  rdfs:subClassOf :MaterialStructure ;
+                                  rdfs:comment "A material structure that covers multiple grains or phases of the material"@en ;
+                                  rdfs:label "Mesoscopic Level Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/MicroscopicLevelMaterialStructure
+:MicroscopicLevelMaterialStructure rdf:type owl:Class ;
+                                   rdfs:subClassOf :MaterialStructure ;
+                                   rdfs:comment "A material structure on a single grain level"@en ;
+                                   rdfs:label "Microscopic Level Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/NanoLevelMaterialStructure
+:NanoLevelMaterialStructure rdf:type owl:Class ;
+                            rdfs:subClassOf :MaterialStructure ;
+                            rdfs:comment "A Material Structure that involves individual features within one single grain or phase like dislocations or precipitates."@en ;
+                            rdfs:label "Nano Level Material Structure"@en .
+
+
+###  https://material-digital.de/pmdco/NonTransformativeAnalysisProcess
+:NonTransformativeAnalysisProcess rdf:type owl:Class ;
+                                  rdfs:subClassOf :AnalysisProcess ;
+                                  rdfs:comment "An analysis process that is also a non-transformative process"@en ;
+                                  rdfs:label "Non Transformative Analysis Process"@en .
+
+
+###  https://material-digital.de/pmdco/PmdEntity
+:PmdEntity rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( <http://purl.obolibrary.org/obo/BFO_0000004>
+                                               <http://purl.obolibrary.org/obo/BFO_0000020>
+                                             )
+                               ] .
+
+
+###  https://material-digital.de/pmdco/PmdObject
+:PmdObject rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( <http://emmo.info/emmo#EMMO_90ae56e4_d197_49b6_be1a_0049e4756606>
+                                                      [ rdf:type owl:Class ;
+                                                        owl:complementOf <http://emmo.info/emmo#EMMO_2553c342_fc28_47d8_8e19_7a98fa08f150>
+                                                      ]
+                                                      [ rdf:type owl:Class ;
+                                                        owl:complementOf <http://emmo.info/emmo#EMMO_d9589ed2_5304_48b3_9795_11bf44e64e9b>
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:comment "There is no need for sub-objects, because objects can be part of other objects. Status cannot be object, because is is not physical." .
+
+
+###  https://material-digital.de/pmdco/ProcessNode
+:ProcessNode rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+             rdfs:comment "A workflow constituent that facilitates process instances, e.g. a service, tool, or machine."@en ;
+             rdfs:label "Process Node"@en .
+
+
+###  https://material-digital.de/pmdco/QualitySpecification
+:QualitySpecification rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                      rdfs:comment "Specification of a physical property of something"@en ;
+                      rdfs:label "Quality Specification"@en .
+
+
+###  https://material-digital.de/pmdco/ResourceIdentifier
+:ResourceIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                    rdfs:label "Resource Identifier" ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A content identifier that designates a digtal element that can be accessed or modified via information technology systems." .
+
+
+###  https://material-digital.de/pmdco/SimulationProcess
+:SimulationProcess rdf:type owl:Class ;
+                   rdfs:subClassOf :AnalysisProcess ;
+                   rdfs:comment "An analysis process that is used for a simulation"@en ;
+                   rdfs:label "Simulation Process"@en .
+
+
+###  https://material-digital.de/pmdco/Specimen
+:Specimen rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+          rdfs:comment "An object designed for a specific analysis." .
+
+
+###  https://material-digital.de/pmdco/TransformativeAnalysisProcess
+:TransformativeAnalysisProcess rdf:type owl:Class ;
+                               rdfs:subClassOf :AnalysisProcess ;
+                               rdfs:comment "An analysis process that is also a transformative process"@en ;
+                               rdfs:label "Transformative Analysis Process"@en .
+
+
+###  https://material-digital.de/pmdco/UniformResourceIdentifier
+:UniformResourceIdentifier rdf:type owl:Class ;
+                           rdfs:subClassOf :ResourceIdentifier ;
+                           rdfs:label "Uniform Resource Identifier" ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "rfc 3986" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
