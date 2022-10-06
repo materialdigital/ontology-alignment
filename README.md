@@ -1,5 +1,5 @@
-# ontology-alignment
+# Ontology-Alignment
 Module for Alignment of MSE Ontologies
 
-
-https://colab.research.google.com/drive/1BCu9oqpA3thaWoBhKPgVI2JLiYPK2DOi#scrollTo=wImdc2doCFQw
+## Demonstration
+[Colab Notebook to demonstrate use](https://colab.research.google.com/github/materialdigital/ontology-alignment/blob/main/pmdco_mapping_dev.ipynb)
