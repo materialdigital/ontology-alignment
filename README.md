@@ -1,11 +1,11 @@
 # Ontology-Alignment
-A Module for alignment of MSE-related ontologies.
+A module for alignment of MSE-related ontologies.
 
 Materials Science and Engineering (MSE) combines engineering, physics and chemistry principles to solve real-world problems associated with nanotechnology, biotechnology, information technology, energy, manufacturing and other major engineering disciplines. 
 
-For the digitization of MSE-relevant processes, objects involved (e.g. material), scientific findings and existing knowledge many differnt ontologies are used to represent the data. Each ontology has been created under different design principles even if they actually are created for the same purpose. This leads to a high degree of diversity of the MSE-related ontolgies which practically prevents interoperability.
+For the digitization of MSE-relevant processes, objects involved (e.g. material), scientific findings and existing knowledge many differnt ontologies are used to represent the data. Each ontology has been created under different design principles and focus even if they actually are created for the same or similar purpose. This leads to a high degree of diversity of the MSE-related ontolgies which practically prevents interoperability.
 
-To overcome this issue, this repo provides an attempt to align different MSE-related ontolgies, namely: PMDco, BFO, EMMO, CCO, prov-o.
+To overcome this issue, this repository provides an attempt to align different MSE-related ontolgies, namely: PMDco, BFO, EMMO, CCO, prov-o.
 
 With this alignment a partial conversion between data encoded with these ontology should be possible. 
 
