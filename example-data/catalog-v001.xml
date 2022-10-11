@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="http://emmo.info/emmo/1.0.0-beta4" uri="TLO/emmo_inferred.ttl"/>
+</catalog>
