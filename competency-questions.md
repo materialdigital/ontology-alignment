@@ -1,6 +1,6 @@
-#PMD - Ontology Alignment - Kompetenzfragen
+ENGLISH below
 
-(TODO: translate to English)
+#PMD - Ontology Alignment - Kompetenzfragen
 
 (1) Welche Materialien sind in den Daten vorhanden?
 
@@ -35,4 +35,39 @@ Weitere evtl. noch zu klärenden Fragen:
 
 (14) Wie können Material und Mikrostruktur unterschieden werden?
 
+--------------------------------------------------------------------------------------------------------------
 
+#PMD - Ontology Alignment - Competency Questions
+
+(1) What materials are present in the data?
+
+(2) What are the properties of the materials (or a specific material)?
+- e.g., what is the mass of the available samples?
+- e.g., what is the size of the boiled eggs involved?
+
+(3) What processes are present in the data?
+
+(4) What process steps (sub-processes) are there?
+
+(5) What parameters do the processes (or a specific (sub)process) have?
+
+(6) What properties (settings/input) do the processes have?
+
+(7) What tests are available?
+
+(8) Which processes are involved in the tests (or a specific one)?
+
+(9) Which materials are involved in which tests?
+
+(10) Which datasets are available?
+
+(11) Which devices are involved in a process?
+
+(12) How have properties changed across processes and their steps? (before/after value)
+
+--
+Further questions that may still need to be clarified:
+
+(13) How can properties and measurement results be distinguished?
+
+(14) How can material and microstructure be distinguished?
